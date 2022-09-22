@@ -1,4 +1,7 @@
 def transpont(m):
+    """
+    Transpont a matrix
+    """
     row_amount = len(m)
     col_amount = len(m[0])
 

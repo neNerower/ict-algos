@@ -1,5 +1,11 @@
-
 def get_sub_matrix(matrix, rows, cols):
+    """
+    This function returns the copy of the matrix containing target rows and columns
+    @params:
+        matrix - matrix to copy from
+        rows - list of rows to copy
+        cols - list of columns to copy
+    """
     res = []
 
     for i in range(len(matrix)):
@@ -20,6 +26,11 @@ def get_sub_matrix(matrix, rows, cols):
 
 
 def get_minor_value(m) -> int:
+    """
+    This function returns the value of the minor
+    @params:
+        m - minor to get the value from
+    """
     if len(m) == len(m[0]):
         # TODO: Check that size is not less than 2
         size = len(m)
@@ -41,8 +52,13 @@ def get_minor_value(m) -> int:
     return res
     
 
-
 def get_matrix_rank(m):
+    """
+    This function returns the rank of the matrix
+    The minor method is used
+    @params:
+        m - matrix to get the rank from
+    """
     rows_amount = len(m)
     cols_amount = len(m[0])
 

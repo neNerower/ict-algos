@@ -1,4 +1,7 @@
 def mult(a,b):
+    """
+    Multiply two matrices
+    """
     if (len(a[0]) == len(b)):
         common_side = len(b)
     else:
