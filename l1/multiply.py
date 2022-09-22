@@ -1,16 +1,3 @@
-def transpont(m):
-    row_amount = len(m)
-    col_amount = len(m[0])
-
-    tm = [[0 for i in range(row_amount)] for j in range(col_amount)]
-
-    for i in range(row_amount):
-        for j in range(col_amount):
-            tm[j][i] = m[i][j]
-
-    return tm
-
-
 def mult(a,b):
     if (len(a[0]) == len(b)):
         common_side = len(b)
@@ -50,11 +37,6 @@ if __name__ == "__main__":
     ]
 
     # from pprint import pprint as pp
-
-    print("Transpont matrix m:")
-    # pp(transpont(m))
-    for lst in transpont(m):
-        print(lst)
 
     print("\n\nMultiply matrix n with m:")
     # pp(mult(n,m))
