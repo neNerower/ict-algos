@@ -21,9 +21,15 @@ def get_sub_matrix(matrix, rows, cols):
 
 def get_minor_value(m) -> int:
     if len(m) == len(m[0]):
+        # TODO: Check that size is not less than 2
         size = len(m)
     else:
         raise "Wrong minor size"
+
+    # Just a stub for now
+    # TODO: Remove from here
+    if size == 1:
+        return m[0][0]
 
     if size == 2:
         return m[0][0]*m[1][1] - m[0][1]*m[1][0]
@@ -40,8 +46,8 @@ def get_matrix_rank(m):
     rows_amount = len(m)
     cols_amount = len(m[0])
 
-    minor_rows = [0]
-    minor_cols = [0]
+    minor_rows = []
+    minor_cols = []
 
     is_ranked = True
 
@@ -72,9 +78,12 @@ def get_matrix_rank(m):
 
 if __name__ == "__main__":
     m = [
-        [1, -1, 2],
-        [2, -2, 4],
-        [-1, 1, -1]
+        [ 1,  2,  0, 5],
+        [ 2,  4, -1, 0],
+        [-2, -4,  1, 0],
+        [ 1,  0,  2, 1]
     ]
+
+    n = [[0 for i in range(3)] for j in range(3)]
 
     print(get_matrix_rank(m))
