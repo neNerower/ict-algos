@@ -1,0 +1,3 @@
+# Virtual enviroment
+/algos-env/*
+!/algos-env/requirements.txt
