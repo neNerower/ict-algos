@@ -25,17 +25,17 @@ def get_sub_matrix(matrix, rows, cols):
     return res
 
 
-def get_minor_value(m) -> int:
+def get_determinant(m) -> int:
     """
-    This function returns the value of the minor
+    Count determinant of the matrix
     @params:
-        m - minor to get the value from
+        m - matrix to count determinant from
     """
     if len(m) == len(m[0]):
         # TODO: Check that size is not less than 2
         size = len(m)
     else:
-        raise "Wrong minor size"
+        raise "Matrix must be square"
 
     # Just a stub for now
     # TODO: Remove from here
@@ -47,7 +47,7 @@ def get_minor_value(m) -> int:
 
     res = 0
     for col in range(size):
-        res += (-1 if col%2 !=0 else 1) * m[0][col] * get_minor_value(get_sub_matrix(m, [i for i in range(size) if i != 0], [i for i in range(size) if i != col]))
+        res += (-1 if col%2 !=0 else 1) * m[0][col] * get_determinant(get_sub_matrix(m, [i for i in range(size) if i != 0], [i for i in range(size) if i != col]))
     
     return res
     
@@ -78,7 +78,7 @@ def get_matrix_rank(m):
                 if j in minor_cols:
                     continue
 
-                if get_minor_value(get_sub_matrix(m, [*minor_rows, i], [*minor_cols, j])) != 0:
+                if get_determinant(get_sub_matrix(m, [*minor_rows, i], [*minor_cols, j])) != 0:
                     minor_rows.append(i)
                     minor_cols.append(j)
                     is_ranked = True
